@@ -1,3 +1,4 @@
+import FloatingCards from "./FloatingCards";
 export default function Hero() {
   return (
     <section className="container min-h-screen flex items-center">
@@ -38,6 +39,7 @@ export default function Hero() {
         </div>
 
       </div>
+      <FloatingCards />
     </section>
   );
 }

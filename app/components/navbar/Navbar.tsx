@@ -1,3 +1,4 @@
+import ThemeToggle from "./ThemeToggle";
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
@@ -40,6 +41,18 @@ export default function Navbar() {
           className="rounded-full bg-pink-500 px-5 py-2 text-sm font-semibold text-white transition hover:bg-pink-600"
         >
           Follow
+          <div className="flex items-center gap-3">
+  <ThemeToggle />
+
+  <a
+    href="https://www.instagram.com/thenext.chapter._/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="rounded-full bg-pink-500 px-5 py-2 text-sm font-semibold text-white"
+  >
+    Follow
+     </a>
+  </div>
         </a>
 
       </nav>
