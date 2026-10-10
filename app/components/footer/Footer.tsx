@@ -1,17 +1,57 @@
 export default function Footer() {
   return (
-    <footer className="border-t border-pink-100 py-10">
-      <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 md:flex-row">
+    <footer className="mt-32 border-t border-neutral-200">
 
-        <h3 className="text-xl font-bold">
-          thenext<span className="text-pink-500">chapter</span>
-        </h3>
+      <div className="container py-20">
 
-        <p className="text-sm text-neutral-500">
-          © 2026 Samiya • Building my next chapter.
+        <h2 className="heading text-6xl">
+
+          Let's build
+          <br />
+          something meaningful.
+
+        </h2>
+
+        <p className="mt-8 max-w-xl text-lg leading-9 text-neutral-500">
+
+          Thanks for visiting my little corner of the internet.
+          This is only the beginning.
+
         </p>
 
+        <div className="mt-12 flex flex-wrap gap-6 text-lg">
+
+          <a
+            href="https://github.com/thenextchapter690"
+            target="_blank"
+          >
+            GitHub
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sam-iya-17327543a/"
+            target="_blank"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://www.instagram.com/thenext.chapter._/"
+            target="_blank"
+          >
+            Instagram
+          </a>
+
+        </div>
+
       </div>
+
+      <div className="border-t py-8 text-center text-neutral-500">
+
+        © 2026 Samiya • Built with Next.js
+
+      </div>
+
     </footer>
   );
 }

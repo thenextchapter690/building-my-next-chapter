@@ -1,47 +1,63 @@
-const skills = [
-  "Flutter",
-  "Dart",
-  "Python",
-  "Next.js",
-  "React",
-  "Firebase",
-  "FastAPI",
-  "PostgreSQL",
-  "Git & GitHub",
-  "Figma",
-  "UI/UX Design",
-  "AI Development",
-];
+const toolkit = {
+  Languages: ["Dart", "Python", "JavaScript", "SQL"],
+  Frameworks: ["Flutter", "Next.js", "React"],
+  Tools: ["Git", "GitHub", "VS Code", "Firebase"],
+  Learning: ["AI", "UI Design", "Content", "Startups"],
+};
 
 export default function Skills() {
   return (
     <section
       id="skills"
-      className="container mx-auto px-6 py-32"
+      className="container py-32"
     >
-      <div className="max-w-6xl mx-auto">
 
-        <p className="text-pink-500 uppercase tracking-[0.3em] font-semibold">
-          Skills
+      <div className="mb-20">
+
+        <p className="mb-3 uppercase tracking-[0.35em] text-sm text-neutral-500">
+          MY TOOLKIT
         </p>
 
-        <h2 className="mt-4 text-5xl font-bold">
-          Things I Love Building With
+        <h2 className="heading text-6xl">
+          Tools I use.
         </h2>
 
-        <div className="mt-16 flex flex-wrap gap-5">
-
-          {skills.map((skill) => (
-            <div
-              key={skill}
-              className="rounded-full border border-pink-200 bg-white px-6 py-3 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-pink-400 hover:shadow-lg dark:bg-neutral-900"
-            >
-              {skill}
-            </div>
-          ))}
-
-        </div>
       </div>
+
+      <div className="grid gap-8 md:grid-cols-2">
+
+        {Object.entries(toolkit).map(([title, items]) => (
+
+          <div
+            key={title}
+            className="rounded-[30px] border border-neutral-200 bg-white p-8"
+          >
+
+            <h3 className="mb-6 text-2xl font-semibold">
+              {title}
+            </h3>
+
+            <div className="flex flex-wrap gap-3">
+
+              {items.map((tool) => (
+
+                <span
+                  key={tool}
+                  className="rounded-full border border-neutral-200 px-5 py-2 transition hover:border-pink-300 hover:bg-pink-50"
+                >
+                  {tool}
+                </span>
+
+              ))}
+
+            </div>
+
+          </div>
+
+        ))}
+
+      </div>
+
     </section>
   );
 }

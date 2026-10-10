@@ -1,65 +1,82 @@
 const interests = [
   {
-    emoji: "🎨",
-    title: "Drawing",
-    description:
-      "I enjoy sketching and designing ideas visually. It helps me think creatively.",
-  },
-  {
-    emoji: "📝",
-    title: "Journaling",
-    description:
-      "I document my journey, ideas, lessons, and goals to keep growing every day.",
-  },
-  {
-    emoji: "📅",
-    title: "Planning",
-    description:
-      "I love organizing projects, roadmaps, and productivity systems before building.",
-  },
-  {
     emoji: "📚",
     title: "Reading",
-    description:
-      "Books inspire my thinking, storytelling, and the products I dream of building.",
+    text: "Books that make me think differently.",
+  },
+  {
+    emoji: "🎧",
+    title: "Music",
+    text: "My daily background while studying and building.",
+  },
+  {
+    emoji: "♟",
+    title: "Chess",
+    text: "A hobby that teaches patience and strategy.",
+  },
+  {
+    emoji: "🎨",
+    title: "Design",
+    text: "Learning how to make products feel beautiful.",
+  },
+  {
+    emoji: "🚀",
+    title: "Startups",
+    text: "I enjoy turning ideas into real projects.",
+  },
+  {
+    emoji: "✍️",
+    title: "Writing",
+    text: "Documenting my journey and future novel ideas.",
   },
 ];
 
 export default function Interests() {
   return (
-    <section id="interests" className="container mx-auto px-6 py-32">
-      <div className="max-w-6xl mx-auto">
+    <section
+      id="interests"
+      className="container py-32"
+    >
 
-        <p className="text-pink-500 uppercase tracking-[0.3em] font-semibold">
-          Beyond Code
+      <div className="mb-20">
+
+        <p className="mb-3 uppercase tracking-[0.35em] text-sm text-neutral-500">
+          BEYOND TECH
         </p>
 
-        <h2 className="mt-4 text-5xl font-bold">
-          Things I Enjoy
+        <h2 className="heading text-6xl">
+          Things I enjoy.
         </h2>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2">
+      </div>
 
-          {interests.map((item) => (
-            <div
-              key={item.title}
-              className="rounded-3xl border border-pink-100 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-neutral-900"
-            >
-              <div className="text-5xl">{item.emoji}</div>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
 
-              <h3 className="mt-6 text-2xl font-bold">
-                {item.title}
-              </h3>
+        {interests.map((item) => (
 
-              <p className="mt-4 text-neutral-600 dark:text-neutral-300 leading-8">
-                {item.description}
-              </p>
+          <div
+            key={item.title}
+            className="rounded-[30px] border border-neutral-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-lg"
+          >
+
+            <div className="mb-5 text-5xl">
+              {item.emoji}
             </div>
-          ))}
 
-        </div>
+            <h3 className="mb-3 text-2xl font-semibold">
+              {item.title}
+            </h3>
+
+            <p className="leading-8 text-neutral-600">
+              {item.text}
+            </p>
+
+          </div>
+
+        ))}
 
       </div>
+
     </section>
   );
 }

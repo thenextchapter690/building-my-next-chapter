@@ -1,45 +1,54 @@
-import FloatingCards from "./FloatingCards";
 export default function Hero() {
   return (
-    <section className="container min-h-screen flex items-center">
+    <section className="container flex min-h-screen items-center">
+
       <div className="max-w-3xl">
 
-        <p className="mb-4 text-sm uppercase tracking-[0.3em] text-pink-500">
-          Student • Builder • Founder
+        <p className="mb-6 uppercase tracking-[0.45em] text-sm text-neutral-500">
+          Student • Founder • Builder
         </p>
 
-        <h1 className="text-6xl md:text-8xl leading-tight font-bold">
-          Building My
+        <h1 className="heading text-7xl md:text-8xl lg:text-[7rem] leading-[0.9]">
+
+          Building my
+
           <br />
-          <span className="gradient-text">
-            Next Chapter.
+
+          <span className="text-[var(--accent)]">
+            next chapter.
           </span>
+
         </h1>
 
-        <p className="mt-8 max-w-2xl text-lg text-neutral-600 dark:text-neutral-300">
-          Hi, I'm <strong>Samiya</strong>, a Class 10 student from India building
-          AI startups, creative tools, and documenting every step of the journey.
+        <p className="mt-10 max-w-xl text-xl leading-9 text-neutral-500">
+
+          Hi, I'm Samiya — a 16-year-old student from India building AI
+          products, learning Flutter, documenting the journey, and proving
+          that you don't need to wait to start creating.
+
         </p>
 
-        <div className="mt-10 flex flex-wrap gap-4">
-
-          <button className="button">
-            Explore My Journey
-          </button>
+        <div className="mt-12 flex gap-4">
 
           <a
-            href="https://www.instagram.com/thenext.chapter._/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-pink-300 px-6 py-3 font-medium hover:bg-pink-50 transition"
+            href="#projects"
+            className="rounded-full bg-black px-8 py-4 text-white transition hover:opacity-80"
           >
-            Instagram
+            View Projects
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/sam-iya-17327543a/"
+            target="_blank"
+            className="rounded-full border px-8 py-4 transition hover:bg-white"
+          >
+            LinkedIn
           </a>
 
         </div>
 
       </div>
-      <FloatingCards />
+
     </section>
   );
 }
