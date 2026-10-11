@@ -1,31 +1,29 @@
 import Navbar from "@/app/components/navbar/Navbar";
 import Hero from "@/app/components/hero/Hero";
 import About from "@/app/components/about/About";
-import Startups from "@/app/components/startups/Startups";
+import FeaturedProjects from "@/app/components/projects/FeaturedProjects";
 import CurrentFocus from "@/app/components/current-focus/CurrentFocus";
 import Skills from "@/app/components/skills/Skills";
-import Interests from "@/app/components/interests/Interests";
+import Social from "@/app/components/social/Socials";
 import Footer from "@/app/components/footer/Footer";
+import Cursor from "@/app/components/cursor/Cursor";
+import AnimatedBackground from "@/app/components/background/AnimatedBackground";
 
 export default function Home() {
   return (
     <>
+      <Cursor />
+      <AnimatedBackground />
+
       <Navbar />
 
       <main>
-
         <Hero />
-
         <About />
-
-        <Startups />
-
+        <FeaturedProjects />
         <CurrentFocus />
-
         <Skills />
-
-        <Interests />
-
+        <Social />
       </main>
 
       <Footer />

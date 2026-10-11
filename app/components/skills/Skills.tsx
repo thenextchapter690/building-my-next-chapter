@@ -1,63 +1,57 @@
-const toolkit = {
-  Languages: ["Dart", "Python", "JavaScript", "SQL"],
-  Frameworks: ["Flutter", "Next.js", "React"],
-  Tools: ["Git", "GitHub", "VS Code", "Firebase"],
-  Learning: ["AI", "UI Design", "Content", "Startups"],
-};
+"use client";
+
+import { motion } from "framer-motion";
+
+const groups = [
+  {
+    title: "Languages",
+    items: ["Dart", "Python", "JavaScript", "SQL"],
+  },
+  {
+    title: "Frameworks",
+    items: ["Flutter", "Next.js", "React"],
+  },
+  {
+    title: "Tools",
+    items: ["Firebase", "Git", "VS Code", "Figma", "Cursor AI"],
+  },
+];
 
 export default function Skills() {
   return (
-    <section
-      id="skills"
-      className="container py-32"
-    >
+    <section className="container py-28">
+      <p className="tracking-[0.3em] uppercase text-pink-500 text-sm">
+        Toolkit
+      </p>
 
-      <div className="mb-20">
+      <h2 className="heading mt-4 text-6xl">
+        Tools I use.
+      </h2>
 
-        <p className="mb-3 uppercase tracking-[0.35em] text-sm text-neutral-500">
-          MY TOOLKIT
-        </p>
-
-        <h2 className="heading text-6xl">
-          Tools I use.
-        </h2>
-
-      </div>
-
-      <div className="grid gap-8 md:grid-cols-2">
-
-        {Object.entries(toolkit).map(([title, items]) => (
-
-          <div
-            key={title}
-            className="rounded-[30px] border border-neutral-200 bg-white p-8"
+      <div className="mt-16 grid gap-8 md:grid-cols-3">
+        {groups.map((group) => (
+          <motion.div
+            key={group.title}
+            whileHover={{ y: -6 }}
+            className="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm"
           >
-
             <h3 className="mb-6 text-2xl font-semibold">
-              {title}
+              {group.title}
             </h3>
 
             <div className="flex flex-wrap gap-3">
-
-              {items.map((tool) => (
-
+              {group.items.map((item) => (
                 <span
-                  key={tool}
-                  className="rounded-full border border-neutral-200 px-5 py-2 transition hover:border-pink-300 hover:bg-pink-50"
+                  key={item}
+                  className="rounded-full bg-pink-50 px-4 py-2 text-sm text-pink-700"
                 >
-                  {tool}
+                  {item}
                 </span>
-
               ))}
-
             </div>
-
-          </div>
-
+          </motion.div>
         ))}
-
       </div>
-
     </section>
   );
 }

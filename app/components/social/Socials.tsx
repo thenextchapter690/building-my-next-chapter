@@ -1,69 +1,119 @@
+"use client";
+
+import { motion } from "framer-motion";
+import {
+  Globe,
+  Mail,
+  ArrowUpRight,
+  ExternalLink,
+} from "lucide-react";
+
 const socials = [
   {
     title: "GitHub",
-    emoji: "🐙",
-    description: "Projects & Open Source",
+    description: "Explore my projects and open-source work.",
     link: "https://github.com/thenextchapter690",
   },
   {
+    title: "Discord • Tech Nest",
+    description: "Join my community of students and builders.",
+    link: "https://discord.gg/WxGCYwrDJJ",
+  },
+  {
     title: "Instagram",
-    emoji: "📸",
-    description: "Build Logs & Journey",
-    link: "https://www.instagram.com/thenext.chapter._/",
+    description: "Follow my startup journey.",
+    link: "https://instagram.com/thenext.chapter._",
+  },
+  {
+    title: "Email",
+    description: "Reach out for collaborations.",
+    link: "mailto:your@email.com",
   },
   {
     title: "LinkedIn",
-    emoji: "💼",
-    description: "Professional Updates",
-    link: "https://www.linkedin.com/in/sam-iya-17327543a/",
-  },
-  {
-    title: "Tech Nest",
-    emoji: "💬",
-    description: "Discord Community",
+    description: "Coming soon.",
     link: "#",
   },
 ];
 
-export default function Socials() {
+export default function Social() {
   return (
-    <section className="py-32">
-      <div className="mx-auto max-w-6xl px-6">
-
-        <p className="text-center text-pink-500 uppercase tracking-[0.3em] font-semibold">
-          Follow My Journey
+    <section
+      id="connect"
+      className="container mx-auto px-6 py-28"
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="mb-16 text-center"
+      >
+        <p className="text-sm uppercase tracking-[0.35em] text-pink-500">
+          Connect
         </p>
 
-        <h2 className="mt-4 text-center text-5xl font-bold">
-          Find Me Online
+        <h2 className="heading mt-4 text-6xl">
+          Let's build together.
         </h2>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <p className="mx-auto mt-6 max-w-2xl text-neutral-600">
+          Whether it's startups, AI, coding or simply sharing ideas,
+          I'd love to connect.
+        </p>
+      </motion.div>
 
-          {socials.map((social) => (
-            <a
-              key={social.title}
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-3xl border border-pink-200 bg-white p-8 shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl dark:bg-neutral-900"
-            >
-              <div className="text-5xl">
-                {social.emoji}
-              </div>
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        {socials.map((item, index) => (
+          <motion.a
+            key={item.title}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{
+              delay: index * 0.1,
+            }}
+            whileHover={{
+              y: -8,
+            }}
+            className="group rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:shadow-xl"
+          >
+            <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pink-50 text-pink-600">
+              {item.title === "Email" ? (
+                <Mail size={28} />
+              ) : (
+                <Globe size={28} />
+              )}
+            </div>
 
-              <h3 className="mt-6 text-2xl font-bold">
-                {social.title}
-              </h3>
+            <h3 className="mt-6 text-2xl font-semibold">
+              {item.title}
+            </h3>
 
-              <p className="mt-3 text-neutral-500">
-                {social.description}
-              </p>
-            </a>
-          ))}
+            <p className="mt-3 text-neutral-600">
+              {item.description}
+            </p>
 
-        </div>
+            <div className="mt-8 flex items-center font-medium text-pink-600">
+              Open
 
+              {item.link === "#" ? (
+                <ExternalLink
+                  className="ml-2"
+                  size={18}
+                />
+              ) : (
+                <ArrowUpRight
+                  className="ml-2 transition group-hover:translate-x-1 group-hover:-translate-y-1"
+                  size={18}
+                />
+              )}
+            </div>
+          </motion.a>
+        ))}
       </div>
     </section>
   );

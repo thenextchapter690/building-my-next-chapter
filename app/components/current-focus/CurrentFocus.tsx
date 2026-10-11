@@ -1,65 +1,62 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 const focus = [
   {
+    emoji: "🚀",
     title: "Building Labello",
-    description:
-      "Designing an AI learning platform that gives every student a personalized learning experience.",
+    desc: "Creating an AI learning platform.",
   },
   {
+    emoji: "📚",
     title: "Preparing for Boards",
-    description:
-      "Balancing school with projects while staying consistent every day.",
+    desc: "Balancing school with startup life.",
   },
   {
+    emoji: "🤖",
     title: "Learning Flutter & AI",
-    description:
-      "Exploring modern technologies to build products instead of just tutorials.",
+    desc: "Building real products every week.",
   },
   {
+    emoji: "🌱",
     title: "Growing Tech Nest",
-    description:
-      "Creating a welcoming community where students can learn and build together.",
+    desc: "Helping students build together.",
   },
 ];
 
 export default function CurrentFocus() {
   return (
-    <section id="focus" className="container py-32">
+    <section className="container py-28">
+      <p className="tracking-[0.3em] uppercase text-pink-500 text-sm">
+        Current Focus
+      </p>
 
-      <div className="mb-20">
+      <h2 className="heading mt-4 text-6xl">
+        What I'm working on.
+      </h2>
 
-        <p className="mb-3 uppercase tracking-[0.35em] text-sm text-neutral-500">
-          CURRENTLY
-        </p>
-
-        <h2 className="heading text-6xl">
-          What I'm focused on.
-        </h2>
-
-      </div>
-
-      <div className="space-y-6">
-
+      <div className="mt-16 grid gap-8 md:grid-cols-2">
         {focus.map((item) => (
-
-          <div
+          <motion.div
             key={item.title}
-            className="rounded-[30px] border border-neutral-200 bg-white p-8 transition hover:-translate-y-1 hover:shadow-lg"
+            whileHover={{ y: -5 }}
+            className="rounded-3xl border border-neutral-200 bg-white p-8"
           >
+            <div className="mb-4 text-4xl">
+              {item.emoji}
+            </div>
 
-            <h3 className="mb-3 text-2xl font-semibold">
+            <h3 className="text-2xl font-semibold">
               {item.title}
             </h3>
 
-            <p className="leading-8 text-neutral-600">
-              {item.description}
+            <p className="mt-4 text-neutral-600">
+              {item.desc}
             </p>
-
-          </div>
-
+          </motion.div>
         ))}
-
       </div>
-
     </section>
   );
 }

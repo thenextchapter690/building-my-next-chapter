@@ -1,20 +1,38 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export default function ThemeToggle() {
   const [dark, setDark] = useState(false);
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", dark);
-  }, [dark]);
+    const saved = localStorage.getItem("theme");
+
+    if (saved === "dark") {
+      document.documentElement.classList.add("dark");
+      setDark(true);
+    }
+  }, []);
+
+  function toggle() {
+    const html = document.documentElement;
+
+    html.classList.toggle("dark");
+
+    const enabled = html.classList.contains("dark");
+
+    setDark(enabled);
+
+    localStorage.setItem("theme", enabled ? "dark" : "light");
+  }
 
   return (
     <button
-      onClick={() => setDark(!dark)}
-      className="rounded-full border border-pink-200 p-2 transition hover:bg-pink-50"
+      onClick={toggle}
+      className="glass flex h-11 w-11 items-center justify-center rounded-full transition hover:scale-105"
     >
-      {dark ? "☀️" : "🌙"}
+      {dark ? <Sun size={18} /> : <Moon size={18} />}
     </button>
   );
 }
