@@ -5,7 +5,6 @@ import {
   Globe,
   Mail,
   ArrowUpRight,
-  ExternalLink,
 } from "lucide-react";
 
 const socials = [
@@ -26,13 +25,12 @@ const socials = [
   },
   {
     title: "Email",
-    description: "Reach out for collaborations.",
-    link: "mailto:your@email.com",
+    description: "Email contact details coming soon.",
   },
   {
     title: "LinkedIn",
     description: "Coming soon.",
-    link: "#",
+    link: "https://www.linkedin.com/in/sam-iya-17327543a/",
   },
 ];
 
@@ -54,12 +52,12 @@ export default function Social() {
         </p>
 
         <h2 className="heading mt-4 text-6xl">
-          Let's build together.
+          Let&apos;s build together.
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-neutral-600">
-          Whether it's startups, AI, coding or simply sharing ideas,
-          I'd love to connect.
+          Whether it&apos;s startups, AI, coding or simply sharing ideas,
+          I&apos;d love to connect.
         </p>
       </motion.div>
 
@@ -68,18 +66,23 @@ export default function Social() {
           <motion.a
             key={item.title}
             href={item.link}
-            target="_blank"
-            rel="noopener noreferrer"
+            target={item.link ? "_blank" : undefined}
+            rel={item.link ? "noopener noreferrer" : undefined}
+            aria-disabled={!item.link || undefined}
+            tabIndex={item.link ? undefined : -1}
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{
-              delay: index * 0.1,
+              delay: index * 0.08,
+              duration: 0.65,
+              ease: [0.22, 1, 0.36, 1],
             }}
-            whileHover={{
-              y: -8,
-            }}
-            className="group rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:shadow-xl"
+            whileHover={item.link ? {
+              y: -4,
+              transition: { type: "spring", stiffness: 320, damping: 26 },
+            } : undefined}
+            className="social-card group rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm transition-all hover:shadow-xl"
           >
             <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-pink-50 text-pink-600">
               {item.title === "Email" ? (
@@ -98,14 +101,8 @@ export default function Social() {
             </p>
 
             <div className="mt-8 flex items-center font-medium text-pink-600">
-              Open
-
-              {item.link === "#" ? (
-                <ExternalLink
-                  className="ml-2"
-                  size={18}
-                />
-              ) : (
+              {item.link ? "Open" : "Coming soon"}
+              {item.link && (
                 <ArrowUpRight
                   className="ml-2 transition group-hover:translate-x-1 group-hover:-translate-y-1"
                   size={18}

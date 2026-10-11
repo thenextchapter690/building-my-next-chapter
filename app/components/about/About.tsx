@@ -9,7 +9,7 @@ export default function About() {
           ABOUT
         </p>
 
-        <h2 className="heading text-6xl leading-tight">
+        <h2 id="journey" className="heading text-6xl leading-tight">
           Just getting
           <br />
           started.
@@ -19,18 +19,18 @@ export default function About() {
       <div className="space-y-8 text-lg leading-9 text-neutral-600">
 
         <p>
-          Hi, I'm <strong>Samiya</strong>, a 16-year-old student from
+          Hi, I&apos;m <strong>Samiya</strong>, a 16-year-old student from
           India who loves building things on the internet.
         </p>
 
         <p>
-          I'm currently balancing Class 10 board preparation with
+          I&apos;m currently balancing Class 10 board preparation with
           building products, learning Flutter and AI, and documenting
           everything I learn along the way.
         </p>
 
         <p>
-          My goal isn't to build dozens of projects. It's to build a few
+          My goal isn&apos;t to build dozens of projects. It&apos;s to build a few
           meaningful ones that genuinely help people.
         </p>
 

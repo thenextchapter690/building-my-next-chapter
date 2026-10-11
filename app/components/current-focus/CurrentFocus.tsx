@@ -33,15 +33,15 @@ export default function CurrentFocus() {
       </p>
 
       <h2 className="heading mt-4 text-6xl">
-        What I'm working on.
+        What I&apos;m working on.
       </h2>
 
       <div className="mt-16 grid gap-8 md:grid-cols-2">
         {focus.map((item) => (
           <motion.div
             key={item.title}
-            whileHover={{ y: -5 }}
-            className="rounded-3xl border border-neutral-200 bg-white p-8"
+            whileHover={{ y: -4, transition: { type: "spring", stiffness: 320, damping: 26 } }}
+            className="focus-card rounded-3xl border border-neutral-200 bg-white p-8"
           >
             <div className="mb-4 text-4xl">
               {item.emoji}

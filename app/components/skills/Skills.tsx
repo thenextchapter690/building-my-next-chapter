@@ -32,8 +32,8 @@ export default function Skills() {
         {groups.map((group) => (
           <motion.div
             key={group.title}
-            whileHover={{ y: -6 }}
-            className="rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm"
+            whileHover={{ y: -4, transition: { type: "spring", stiffness: 320, damping: 26 } }}
+            className="toolkit-card rounded-3xl border border-neutral-200 bg-white p-8 shadow-sm"
           >
             <h3 className="mb-6 text-2xl font-semibold">
               {group.title}
@@ -43,7 +43,7 @@ export default function Skills() {
               {group.items.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full bg-pink-50 px-4 py-2 text-sm text-pink-700"
+                  className="tool-pill rounded-full bg-pink-50 px-4 py-2 text-sm text-pink-700"
                 >
                   {item}
                 </span>

@@ -36,7 +36,7 @@ export default function Startups() {
 
         <h2 className="heading text-6xl leading-tight">
 
-          Things I'm
+          Things I&apos;m
           <br />
 
           building.

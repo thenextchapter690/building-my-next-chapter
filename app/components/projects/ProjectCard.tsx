@@ -32,8 +32,8 @@ export default function ProjectCard({
       initial={{ opacity: 0, y: 70 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.7 }}
-      className="py-24"
+      transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+      className="project-row py-24"
     >
       <div
         className={`grid items-center gap-16 lg:grid-cols-2 ${
@@ -71,6 +71,7 @@ export default function ProjectCard({
           <a
             href={link}
             target="_blank"
+            rel="noopener noreferrer"
             data-cursor="Open"
             className="button button-primary mt-10 inline-flex"
           >
@@ -79,23 +80,19 @@ export default function ProjectCard({
           </a>
         </div>
 
-        <motion.div
-          whileHover={{
-            scale: 1.03,
-            rotate: 1,
-          }}
-          transition={{ duration: 0.3 }}
+        <div
           data-cursor="View"
-          className="overflow-hidden rounded-[32px] border border-neutral-200 bg-white shadow-xl"
+          className="project-image overflow-hidden rounded-[28px] border border-neutral-200 bg-white shadow-xl"
         >
           <Image
             src={image}
             alt={title}
             width={1600}
             height={1000}
-            className="w-full object-cover transition duration-500 hover:scale-105"
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="aspect-[1.55] w-full object-cover transition duration-700 hover:scale-[1.035]"
           />
-        </motion.div>
+        </div>
       </div>
     </motion.section>
   );

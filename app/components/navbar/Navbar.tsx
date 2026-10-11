@@ -1,6 +1,7 @@
 "use client";
 
 import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -10,7 +11,7 @@ export default function Navbar() {
 
         <div className="glass mt-6 flex items-center justify-between rounded-full px-7 py-4">
 
-          <a
+          <Link
             href="/"
             className="heading text-2xl tracking-tight"
           >
@@ -18,7 +19,7 @@ export default function Navbar() {
             <span className="text-[var(--accent)]">
               nextchapter
             </span>
-          </a>
+          </Link>
 
           <div className="hidden items-center gap-10 text-[15px] md:flex">
 
@@ -39,6 +40,8 @@ export default function Navbar() {
             <a
               href="https://github.com/thenextchapter690"
               target="_blank"
+              rel="noopener noreferrer"
+              data-cursor="GitHub"
               className="button button-primary"
             >
               GitHub

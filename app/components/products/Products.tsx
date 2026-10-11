@@ -42,7 +42,7 @@ export default function Products() {
         </p>
 
         <h2 className="mt-4 text-5xl font-bold">
-          Things I'm Building
+          Things I&apos;m Building
         </h2>
 
         <div className="mt-16 grid gap-8 md:grid-cols-2">

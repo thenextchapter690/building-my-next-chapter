@@ -14,9 +14,9 @@ export default function AnimatedBackground() {
         transition={{
           repeat: Infinity,
           duration: 18,
-          ease: "easeInOut",
+          ease: [0.42, 0, 0.58, 1],
         }}
-        className="absolute left-20 top-20 h-72 w-72 rounded-full bg-pink-200/30 blur-[140px]"
+        className="ambient-orb ambient-orb-rose absolute left-20 top-20 h-72 w-72 rounded-full"
       />
 
       <motion.div
@@ -27,9 +27,9 @@ export default function AnimatedBackground() {
         transition={{
           repeat: Infinity,
           duration: 22,
-          ease: "easeInOut",
+          ease: [0.42, 0, 0.58, 1],
         }}
-        className="absolute right-20 bottom-20 h-96 w-96 rounded-full bg-rose-100/40 blur-[170px]"
+        className="ambient-orb ambient-orb-lavender absolute right-20 bottom-20 h-96 w-96 rounded-full"
       />
 
     </div>

@@ -14,7 +14,7 @@ export default function FeaturedProjects() {
         </p>
 
         <h2 className="heading mt-5 text-6xl">
-          Things I've Been Building.
+          Things I&apos;ve Been Building.
         </h2>
 
         <p className="mx-auto mt-6 max-w-2xl text-neutral-600">
@@ -27,7 +27,7 @@ export default function FeaturedProjects() {
         number="01"
         title="Labello"
         description="An AI learning platform where students can build personalized AI tutors with different teaching styles, personalities and learning approaches."
-        image="/projects/labello.png"
+        image="/project/labello.png"
         tags={[
           "Flutter",
           "AI",
@@ -42,7 +42,7 @@ export default function FeaturedProjects() {
         number="02"
         title="Petal Planner"
         description="A calm productivity app helping students manage tasks, habits, schedules and journals in one minimal workspace."
-        image="/projects/planner.png"
+        image="/project/planner.png"
         reverse
         tags={[
           "React",
@@ -58,7 +58,7 @@ export default function FeaturedProjects() {
         number="03"
         title="Tech Nest"
         description="A Discord community for students, builders, developers and startup enthusiasts to learn and grow together."
-        image="/projects/technest.png"
+        image="/project/technest.png"
         tags={[
           "Discord",
           "Community",
@@ -72,7 +72,7 @@ export default function FeaturedProjects() {
         number="04"
         title="Petal Writes"
         description="A peaceful writing platform designed for writers to organize stories, characters and chapters. Currently under development."
-        image="/projects/writes.png"
+        image="/project/writes.png"
         reverse
         status="Coming Soon"
         tags={[
@@ -81,7 +81,7 @@ export default function FeaturedProjects() {
           "Design",
         ]}
         button="View Concept"
-        link="#"
+        link="/project/writes.png"
       />
     </section>
   );

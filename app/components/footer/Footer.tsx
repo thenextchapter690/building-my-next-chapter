@@ -6,7 +6,7 @@ export default function Footer() {
 
         <h2 className="heading text-6xl">
 
-          Let's build
+          Let&apos;s build
           <br />
           something meaningful.
 
@@ -24,6 +24,7 @@ export default function Footer() {
           <a
             href="https://github.com/thenextchapter690"
             target="_blank"
+            rel="noopener noreferrer"
           >
             GitHub
           </a>
@@ -31,6 +32,7 @@ export default function Footer() {
           <a
             href="https://www.linkedin.com/in/sam-iya-17327543a/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             LinkedIn
           </a>
@@ -38,6 +40,7 @@ export default function Footer() {
           <a
             href="https://www.instagram.com/thenext.chapter._/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             Instagram
           </a>

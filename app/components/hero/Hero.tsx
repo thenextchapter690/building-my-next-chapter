@@ -2,12 +2,13 @@
 
 import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export default function Hero() {
 
   return (
 
-    <section className="container flex min-h-screen items-center pt-28">
+    <section className="hero-section container flex min-h-screen items-center pt-28">
 
       <div className="grid items-center gap-20 lg:grid-cols-2">
 
@@ -21,13 +22,13 @@ export default function Hero() {
 
         >
 
-          <p className="mb-6 uppercase tracking-[.45em] text-sm text-neutral-500">
+          <p className="mb-6 uppercase tracking-[.32em] text-xs font-semibold text-neutral-500">
 
             Student • Builder • Founder
 
           </p>
 
-          <h1 className="heading text-6xl leading-[.9] md:text-8xl">
+          <h1 className="heading max-w-3xl text-[clamp(4rem,8vw,7.5rem)] leading-[.88]">
 
             Building my
 
@@ -41,11 +42,11 @@ export default function Hero() {
 
           </h1>
 
-          <p className="mt-10 max-w-xl text-lg leading-9 text-neutral-600">
+          <p className="mt-8 max-w-xl text-[17px] leading-8 text-neutral-600 md:text-lg">
 
-            Hi, I'm Samiya.
+            Hi, I&apos;m Samiya.
 
-            I'm a 16-year-old student from India building AI products,
+            I&apos;m a 16-year-old student from India building AI products,
             documenting the journey, and turning ideas into real projects.
 
           </p>
@@ -71,6 +72,10 @@ export default function Hero() {
               href="https://www.linkedin.com/in/sam-iya-17327543a/"
 
               target="_blank"
+
+              rel="noopener noreferrer"
+
+              data-cursor="Connect"
 
               className="button button-outline"
 
@@ -99,14 +104,14 @@ export default function Hero() {
 
           <div className="glass rounded-[40px] p-5">
 
-            <img
-
-              src="/labello-placeholder.png"
-
-              alt="Labello"
-
-              className="rounded-[30px]"
-
+            <Image
+              src="/project/labello.png"
+              alt="Preview of Labello, an AI learning platform"
+              width={1600}
+              height={1000}
+              preload
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="hero-preview rounded-[30px] object-cover"
             />
 
           </div>
